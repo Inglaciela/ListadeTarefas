@@ -1,0 +1,154 @@
+/*font-family: 'Abril Fatface', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Permanent Marker', cursive;*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+	background-image: url("./img/pawel-czerwinski-z7prq6BtPE4-unsplash\ \(1\).jpg");
+	filter: grayscale(50%) brightness(0.7);
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+    animation: zoom 25s;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+header, form{
+    min-height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    color: azure;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    animation: moveBanner 1s;
+}
+
+@keyframes moveBanner{
+    0%{
+		transform: translateY(10rem) rotateY(-30deg);
+		opacity: 0;
+	}
+	100%{
+		transform: translateY(0) rotateY(0);
+		opacity: 1;
+	}
+}
+
+form input{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    animation: moveBanner 2s;
+}
+
+form button{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    color: black;
+    background: blanchedalmond;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: moveBanner 2s;
+}
+
+form button:hover{
+    color: white;
+    background: #0f0f0f;
+    background: -webkit-linear-gradient(to right, #422803, #410202, #1f082e);
+    background: linear-gradient(to right, #3b2402, #3d0404, #14081d);
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 10rem;
+    list-style: none;
+}
+
+/*criado no JS*/
+.todo{
+    margin: 0.5rem;
+    background: aliceblue;
+    color: black;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li{
+    flex: 1;
+}
+
+.completed-btn, .trash-btn{
+  background: #DC2424;
+  color: #0c0c0c; 
+  border-radius: 0.3rem; 
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.completed-btn{
+    background: rgb(59, 207, 108);
+}
+
+.completed-btn:hover{
+    background: #111111;
+    color: rgb(59, 207, 108);
+}
+.trash-btn:hover{
+    background: #0c0c0c ;
+    color: #DC2424; 
+}
+/*tratamento para não travar os eventos*/
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.fall{
+    transform: translate(8rem) rotate(20deg);
+    opacity: 0;
+}
